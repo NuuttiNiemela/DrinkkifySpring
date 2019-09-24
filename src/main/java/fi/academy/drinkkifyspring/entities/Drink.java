@@ -1,20 +1,24 @@
 package fi.academy.drinkkifyspring.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Drink {
     private Integer id;
     private String drink_name;
     private String drink_instructions;
+    private List<Drink_ingredient> ingredients;
 
     public Drink() {
         this.drink_name = "";
         this.drink_instructions = "";
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -32,6 +36,14 @@ public class Drink {
 
     public void setDrink_instructions(String drink_instructions) {
         this.drink_instructions = drink_instructions;
+    }
+
+    public List<Drink_ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(List<Drink_ingredient> ingredients) {
+        this.ingredients = ingredients;
     }
 
     @Override
