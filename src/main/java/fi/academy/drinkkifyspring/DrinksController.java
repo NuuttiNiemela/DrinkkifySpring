@@ -8,10 +8,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -36,8 +33,13 @@ public class DrinksController extends WebSecurityConfigurerAdapter {
     }
 
     @GetMapping("drinks")
-    public List<Drink> getAllDrinks() {
+    public Iterable<Drink> getAllDrinks() {
         return dao.allDrinks();
+    }
+
+    @GetMapping("drinks/haku")
+    public Iterable<Drink> getDrinksByName(@RequestParam String name) {
+        return dao.drinksByName(name);
     }
 
 }

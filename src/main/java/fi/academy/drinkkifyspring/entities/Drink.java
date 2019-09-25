@@ -7,7 +7,7 @@ public class Drink {
     private Integer id;
     private String drink_name;
     private String drink_instructions;
-    private List<Drink_ingredient> ingredients;
+    private List<Drinks_recipes> ingredients;
 
     public Drink() {
         this.drink_name = "";
@@ -38,11 +38,11 @@ public class Drink {
         this.drink_instructions = drink_instructions;
     }
 
-    public List<Drink_ingredient> getIngredients() {
+    public List<Drinks_recipes> getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(List<Drink_ingredient> ingredients) {
+    public void setIngredients(List<Drinks_recipes> ingredients) {
         this.ingredients = ingredients;
     }
 
